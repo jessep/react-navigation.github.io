@@ -70,3 +70,18 @@ class App extends React.Component {
 ## App Containers on the web
 
 On the web, you can use `createBrowserApp` and `handleServerRequest` to maintain the state for your top-level navigator.
+
+## Persisting Navigation State
+To make your app remember navigation state between uses, simply define `persistenceKey` on your AppContainer:
+
+```js
+const AppContainer = createAppContainer(AppNavigator);
+
+class App extends React.Component {
+  render() {
+    return (
+      <AppContainer persistenceKey="navigationState" />
+    );
+  }
+}
+```
